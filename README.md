@@ -28,6 +28,6 @@ The AMA Education System Chatbot delivers an intuitive and responsive chat exper
 git clone https://github.com/imbkp010/ama-university-chatbotV7.git
 
 2. Create an account from Groq and generate an API key.
-3. Paste your API key in the "config.js" file (public/scripts/config.js)
-4. Save the file.
+3. Paste your API key in the "config.example.js" file (public/scripts/config.js)
+4. Rename as "config.js" then save the file.
 5. Open the "index.html" file on your browser.
