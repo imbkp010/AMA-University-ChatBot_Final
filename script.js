@@ -5,7 +5,7 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 
 let userMessage = null; // Variable to store user's message
-const GROQ_API_KEY = secrets.GROQ_API_KEY;          //---------------// (secrets.GROQ_API_KEY) Replace with your Groq API key //---------------//
+const GROQ_API_KEY = config.GROQ_API_KEY;;          //---------------// (secrets.GROQ_API_KEY) Replace with your Groq API key //---------------//
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
