@@ -34,4 +34,3 @@ jobs:
           folder: dist
           clean: true
           token: ${{ secrets.TOKEN_GITHUB }}
-          
