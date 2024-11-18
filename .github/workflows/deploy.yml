@@ -10,11 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          
       - name: Create config file
         run: |
           echo "const config = { GROQ_API_KEY: '${{ secrets.GROQ_API_KEY }}' };" > config.js
@@ -24,3 +19,4 @@ jobs:
         with:
           branch: gh-pages
           folder: .
+          clean: true
