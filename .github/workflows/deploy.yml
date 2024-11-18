@@ -7,16 +7,30 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
       - name: Create config file
         run: |
           echo "const config = { GROQ_API_KEY: '${{ secrets.GROQ_API_KEY }}' };" > config.js
-          
-      - name: Deploy
+
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main
-          folder: .
+          branch: gh-pages
+          folder: dist
           clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}

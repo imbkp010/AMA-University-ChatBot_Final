@@ -2,6 +2,6 @@
   "name": "ama-chatbot",
   "version": "1.0.0",
   "scripts": {
-    "build": "mkdir -p dist && cp index.html style.css script.js public dist/ -r"
+    "build": "mkdir -p dist && cp [index.html](http://_vscodecontentref_/8) public dist/ -r"
   }
 }
