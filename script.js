@@ -22,8 +22,7 @@ const createChatLi = (message, className) => {
 
 
 const generateResponse = (chatElement) => {
-  const API_URL = "https://api.groq.com/openai/v1/chat/completions";
-  const messageElement = chatElement.querySelector("p");
+  const API_URL = "https://api.groq.com/openai/v1/chat/completions";  const messageElement = chatElement.querySelector("p");
 
   const systemContext = `I am an AI assistant for AMA Education System. I can help you with information about programs, admissions, facilities, and student services. Here are the official AMA Education System resources I can refer to:
 
