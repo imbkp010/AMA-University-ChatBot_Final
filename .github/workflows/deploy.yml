@@ -15,10 +15,7 @@ jobs:
           echo "const config = { GROQ_API_KEY: '${{ secrets.GROQ_API_KEY }}' };" > public/scripts/config.js
           
       - name: List files
-        run: ls -R public
-
-      - name: Create public/scripts directory
-        run: mkdir -p public/scripts
+        run: ls -R 
       
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
