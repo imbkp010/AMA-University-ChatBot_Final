@@ -25,13 +25,13 @@ jobs:
 
       - name: Create config file
         run: |
-          mkdir -p public/scripts
-          echo "const config = { GROQ_API_KEY: '${{ secrets.GROQ_API_KEY }}' };" > public/scripts/config.js
+          mkdir -p dist/public/scripts
+          echo "const config = { GROQ_API_KEY: '${{ secrets.GROQ_API_KEY }}' };" > dist/public/scripts/config.js
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: public
+          folder: dist
           clean: true
           token: ${{ secrets.TOKEN_GITHUB }}
