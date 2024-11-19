@@ -68,14 +68,22 @@ body.show-chatbot .chatbot {
   background: rgb(142, 4, 4);
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-.chatbot header span {
+.close-btn {
   position: absolute;
   right: 15px;
   top: 50%;
-  display: none;
   cursor: pointer;
   transform: translateY(-50%);
 }
+.fullscreen-btn {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  display: block; /* Changed from none to block */
+}
+
 header h2 {
   font-size: 1rem;
 }
@@ -184,6 +192,10 @@ header h2 {
     border-radius: 0;
     width: 100%;
   }
+  .chatbot header .fullscreen-btn,
+  .chatbot .fullscreen-btn {
+    display: none !important; /* Added !important to override other styles */
+  }
   .chatbot .chatbox {
     height: 90%;
     padding: 25px 15px 100px;
@@ -194,7 +206,15 @@ header h2 {
   .chatbot header span {
     display: block;
   }
-
+  .chatbot.fullscreen .chatbox {
+    height: calc(100vh - 120px);
+  }
+  .chatbot header .close-btn {
+    right: 15px;
+  }
+  .fullscreen-btn {
+    display: none;
+  }
 }
 
 .chat-logo {
@@ -202,4 +222,18 @@ header h2 {
   margin-right: 10px;
   width: 48px;
   height: 48px;
+}
+
+.chatbot.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  border-radius: 0;
+  transform: none;
+}
+
+.chatbot.fullscreen .chatbox {
+  height: calc(100vh - 140px);
 }
