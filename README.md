@@ -1,9 +1,9 @@
 # Project Name: Software Engineering Project Development - (AMA Education System Chatbot)
 
 # Members:
-# 1. Bryan Kyle Para-on         - 17001398900
-# 2. Ricky S. Marave Jr.        - 22016456310
-# 3. Dianne Mae T. Bernales     - 22016109010
+1. Bryan Kyle Para-on         - 17001398900
+2. Ricky S. Marave Jr.        - 22016456310
+3. Dianne Mae T. Bernales     - 22016109010
 
 
 # AMA Education System Chatbot
