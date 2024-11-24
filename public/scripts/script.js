@@ -23,9 +23,9 @@ const createChatLi = (message, className) => {
 
 
 const generateResponse = (chatElement) => {
-  const API_URL = AI_Properties.API_URL;
-  const model = AI_Properties.model;
+  const API_URL = "https://api.groq.com/openai/v1/chat/completions";
   const systemContext = knowledge.AI_Knows;
+
   const messageElement = chatElement.querySelector("p");
 
 
@@ -36,7 +36,7 @@ const generateResponse = (chatElement) => {
       Authorization: `Bearer ${API_KEY}`,
     },
     body: JSON.stringify({
-      model: model,
+      model: "llama-3.2-90b-text-preview",
       messages: [
         { role: "system", content: systemContext },
         { role: "user", content: userMessage }
