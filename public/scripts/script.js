@@ -6,7 +6,7 @@ const sendChatBtn = document.querySelector(".chat-input span");
 const fullscreenBtn = document.querySelector(".fullscreen-btn");
 
 let userMessage = null; // Variable to store user's message
-const GROQ_API_KEY = config.GROQ_API_KEY;          //---------------// (config.GROQ_API_KEY) Replace with your Groq API key //---------------//
+const API_KEY = config.API_KEY;          //---------------// (config.API_KEY) Replace with your Groq API key //---------------//
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
@@ -23,18 +23,20 @@ const createChatLi = (message, className) => {
 
 
 const generateResponse = (chatElement) => {
-  const API_URL = "https://api.groq.com/openai/v1/chat/completions";  const messageElement = chatElement.querySelector("p");
-
+  const API_URL = AI_Properties.API_URL;
+  const model = AI_Properties.model;
   const systemContext = knowledge.AI_Knows;
+  const messageElement = chatElement.querySelector("p");
+
 
   const requestOptions = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${GROQ_API_KEY}`,
+      Authorization: `Bearer ${API_KEY}`,
     },
     body: JSON.stringify({
-      model: "llama-3.2-90b-text-preview",
+      model: model,
       messages: [
         { role: "system", content: systemContext },
         { role: "user", content: userMessage }
