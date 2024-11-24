@@ -34,7 +34,7 @@ const generateResponse = (chatElement) => {
       Authorization: `Bearer ${GROQ_API_KEY}`,
     },
     body: JSON.stringify({
-      model: "llama-3.2-90b-vision-preview",
+      model: "llama-3.2-90b-text-preview",
       messages: [
         { role: "system", content: systemContext },
         { role: "user", content: userMessage }
